@@ -1,3 +1,4 @@
+
 # interactive-hero-dogs 
 Rich gallery with portraits of dogs
 
@@ -73,4 +74,7 @@ Once you're happy everything looks good, deploy for real.
 ```bash
 > grunt deploy
 ```
+
+=======
+# interactive-hero-dogs
 
