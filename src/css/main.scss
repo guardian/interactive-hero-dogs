@@ -1,0 +1,284 @@
+/**
+ * Project: Project name 
+ * File:    Main SCSS
+ */
+
+$guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
+
+@import 'modules/fonts';
+.element-interactive.interactive,body{
+	margin:0;
+}
+
+.interactiveContainer .content__head, .interactiveContainer .content__meta-container{
+	display:none;
+}
+
+.guInteractive {
+	font-family:'Guardian Egyptian Web';
+	color:#333;
+	-webkit-font-smoothing:antialiased;
+	max-width:1300px;
+	margin:0 auto;
+	padding:0 10px;
+	box-sizing:border-box;
+
+	*{
+		box-sizing:border-box;
+	}
+
+	h1,h2,h3,h4,h5,h6{
+		font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
+		line-height:1.2em;
+	}
+
+	h1{
+		font-weight:100;
+		line-height:1em;
+	}
+
+	a{
+		text-shadow:none !important;
+		background:none !important;
+	}
+
+	#header{
+		padding:0;
+		max-width:500px;
+		margin:20px auto 20px;
+
+		p{
+			font-size:16px;
+			line-height:1.2em;
+			color:#767676;
+			padding-bottom:40px;
+			margin-bottom:0;
+		}
+	}
+
+	#content{
+		border-top: 1px solid #dcdcdc;
+		margin:0;
+		padding-top:20px;
+	}
+
+	#allDogs{
+		&:after{
+			display:block;
+			clear:both;
+			content:'';
+		}
+	}
+    .dogContainer{
+    	display:block;
+    	width:100%;
+    	height:auto;
+    	cursor:pointer;
+    	position: relative;
+    	margin-bottom:20px;
+    	-webkit-column-break-inside:avoid;
+    	.dog{
+    		height:0;
+    		background-size:100%;
+    		background-position:center;
+    		transition:background 0.2s ease;
+    		background-repeat:no-repeat;
+    		&.dog-portrait{
+    			padding-bottom:115%;
+    		}
+    		&.dog-landscape{
+    			padding-bottom:72%;
+    		}
+    		&.dog-wide{
+    			padding-bottom:38%;
+    		}
+    		&:hover{
+    			background-size:110%;
+    		}
+    	}
+    	.dogInformation{
+    		position: absolute;
+    		width:100%;
+    		height:auto;
+    		bottom:0;
+    		background:rgba(255,255,255,0.75);
+    		padding:20px 10px;
+
+    		h3{
+    			margin:0 0 0.2em;
+    			font-weight:100;
+    			font-size:22px;
+    		}
+    		p{
+    			margin:0;
+    			font-family:'Guardian Text Sans Web';
+    			font-size:14px;
+    			line-height:1.2em;
+    		}
+    	}
+    	&.selected-true{
+			opacity:0.2;
+			cursor: default;
+			.dog:hover{
+				background-size:100%;
+			}
+		}
+    	
+    }
+
+    #detailContainer{
+    	padding:20px 0 20px;
+    	margin-bottom:20px;
+    	border-bottom:1px solid #dcdcdc;
+    	h3{
+    		margin:0;
+    		text-align: center;
+    		font-weight:100;
+    		font-size:28px;
+    	}
+    	#titleStroke{
+    		height:1px;
+    		width:60px;
+    		background-color:#dcdcdc;
+    		margin:5px auto 10px;
+    	}
+    	#dogDescription{
+    		font-family:'Guardian Text Sans Web';
+    		color:#767676;
+    		text-align: center;
+    		font-size:14px;
+    		margin:0 0 20px;
+    	}
+    	#shareContainer{
+    		text-align: center;
+    		margin:0 auto 40px;
+    		button{
+    			height:34px;
+    			width:34px;
+    			border-radius:34px;
+    			background:#333;
+    			display:inline-block;
+    			border: none;
+    			cursor:pointer;
+    			outline: none;
+    			&#share-facebook{
+    				background-color:#3067a3;
+    				background-image: url(../imgs/facebook.svg);
+    				background-position:center;
+    				background-repeat: no-repeat;
+    			}
+    			&#share-twitter{
+    				background-color:#03b3ee;
+    				background-image: url(../imgs/twitter.svg);
+    				background-position:center;
+    				background-repeat: no-repeat;
+    			}
+    			&#share-mail{
+    				background-color:#767676;
+    				background-image: url(../imgs/mail.svg);
+    				background-position:center;
+    				background-repeat: no-repeat;
+    			}
+    		}
+    	}
+    	img{
+    		margin:0 auto 20px;
+    		display:block;
+    		max-width:100%;
+    	}
+    }
+    #dogStory{
+    	max-width:620px;
+    	margin:0 auto;
+    	p{
+    		line-height:1.2em;
+    	}
+    }
+    @media(min-width:480px){
+    	.dogColumn{
+    		width:50%;
+    		float:left;
+    		padding-right:10px;
+    		&:nth-of-type(2){
+    			padding-left:10px;
+    			padding-right:0;
+    		}
+    	}
+
+    	.dogRow{
+    		clear:both;
+    	}
+    	h1{
+    		font-size:48px;
+    		margin-bottom:0;
+    	}
+    	#detailContainer{
+    		padding:40px 0;
+    		h3{
+    			font-size:42px;
+    		}
+    		#titleStroke{
+    			margin: 10px auto 20px;
+    		}
+    	}
+    }
+    @media(min-width:740px){
+    	padding:1px 20px;
+
+    	#header{
+    		padding-top:40px;
+    		padding-bottom:40px;
+    		p{
+    			font-size:18px;
+    		}
+    	}
+    	h1{
+    		font-size:68px;
+    		margin-bottom:0;
+    	}
+    	h3{
+    		font-size:36px;
+    	}
+    	h4{
+    		font-size:22px;
+    	}
+    	.actorInformation{
+    		padding:30px 40px;
+    	}
+
+    	.actorInformation{
+    		h5{
+    			font-size:36px;
+    		}
+    	}
+    	#detailContainer{
+    		#titleStroke{
+    			margin: 10px auto 25px;
+    		}
+    		h3{
+    			font-size:62px;
+    		}
+    	}
+    }
+
+    @media(min-width:980px){
+    	.dogColumn{
+    		padding-right:20px;
+    		&:nth-of-type(2){
+    			padding-left:20px;
+    			padding-right:0;
+    		}
+    	}
+    	.dogContainer{
+    		margin-bottom:40px;
+    	}
+    	#detailContainer{
+    		padding:40px 0 80px;
+    	}
+    	
+
+    	
+    }
+
+}
+
