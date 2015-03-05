@@ -1,25 +1,34 @@
 <div class="guInteractive">
     <header id="header">
-        <h1>Some dog related title</h1>
-        <p>In January 2010, an earthquake all but destroyed Port-au-Prince, the capital of Haiti. Less than two days later, Echo, a labrador, arrived with a UK rescue team to search for survivors. “The rubble, the people, it was chaos,” his handler, Mike Dewar, remembers. “Everyone was pulling the dog: search my house! Search my house!”</p>
+    {{#with furniture}}
+        <h1>{{title}}</h1>
+        <p id="interactiveStandfirst">{{standfirst}}</p>
+        <div id="interactiveByline">
+            {{{byline}}}
+        </div>
+    {{/with}}
     </header>
     <div id="content">
         {{#allDogs}}
             {{#if selected}}
             <div id="detailContainer">
-                <h3>{{name}}</h3>
-                <div id="titleStroke"></div>
-                <p id="dogDescription">{{subhead}}</p>
-                <div id="shareContainer">
-                    <button on-tap="shareDog:facebook" id="share-facebook"></button> 
-                    <button on-tap="shareDog:twitter" id="share-twitter"></button> 
-                    <button on-tap="shareDog:mail" id="share-mail"></button> 
+                <div class="detailWrapper">
+                    <h3>{{name}}, {{shareline}}</h3>
+                    <!-- <div id="titleStroke"></div> -->
+                    <!-- <p id="dogDescription">{{name}}</p> -->
+                    <div id="shareContainer">
+                        <button on-tap="shareDog:facebook" id="share-facebook"></button> 
+                        <button on-tap="shareDog:twitter" id="share-twitter"></button> 
+                        <button on-tap="shareDog:mail" id="share-mail"></button> 
+                    </div>
                 </div>
                 <img src="@@assetPath@@/imgs/{{imagebig}}" alt="picture of {{name}}" />
-                <div id="dogStory">
-                {{#story}}
-                    <p>{{{this}}}</p>
-                {{/story}}
+                <div class="detailWrapper">
+                    <div id="dogStory">
+                    {{#story:i}}
+                        <p>{{{this}}}</p>
+                    {{/story}}
+                    </div>
                 </div>
             </div>
             {{/if}}
