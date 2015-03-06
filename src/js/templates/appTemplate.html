@@ -14,15 +14,15 @@
             <div id="detailContainer">
                 <div class="detailWrapper">
                     <h3>{{name}}, {{shareline}}</h3>
-                    <!-- <div id="titleStroke"></div> -->
-                    <!-- <p id="dogDescription">{{name}}</p> -->
+                    <h4>{{awards}}</h4>
                     <div id="shareContainer">
                         <button on-tap="shareDog:facebook" id="share-facebook"></button> 
                         <button on-tap="shareDog:twitter" id="share-twitter"></button> 
                         <button on-tap="shareDog:mail" id="share-mail"></button> 
                     </div>
                 </div>
-                <img src="@@assetPath@@/imgs/{{imagebig}}" alt="picture of {{name}}" />
+                <img src="@@assetPath@@/imgs/{{id}}/{{imagebig}}" alt="picture of {{name}}" />
+                <!-- <div>{{{  loadImage("@@assetPath@@/imgs/" + id + "/" + imagebig,name)  }}}</div> -->
                 <div class="detailWrapper">
                     <div id="dogStory">
                     {{#story:i}}
@@ -55,17 +55,28 @@
                 {{>dogContainer}}
                 </div>
             {{/allDogs}}
-
-    </div>
+        </div>
+        <div id="moreStories">
+            <h2 id="moreStoriesTitle">More on this story</h2>
+            <li class="otherArticle">
+                <div class="otherarticleimage"><img src="@@assetPath@@/imgs/article1.jpg" /></div>
+                <div class="otherarticletitle"><span>Puppy love: 'Do I like dogs more than people?'</span></div>
+                <a href="http://www.theguardian.com/lifeandstyle/2015/mar/06/puppy-love-do-i-like-dogs-more-than-people"></a> 
+            </li>
+            <li class="otherArticle">
+                <div class="otherarticleimage"><img src="@@assetPath@@/imgs/article2.jpg" /></div>
+                <div class="otherarticletitle"><span>Heroic pets: your photos and stories</span></div>
+                <a href="http://www.theguardian.com/lifeandstyle/2015/mar/06/heroic-pets-your-photos-and-stories"></a> 
+            </li>
+        </div>
 </div>
 
 
 <!-- {{>dogContainer}} -->
 <div class="dogContainer selected-{{selected}}" on-tap="selectDog:{{this}}">
-    <div class="dog dog-{{size}}" style="background-image:url(@@assetPath@@/imgs/{{image}})">
+    <div class="dog dog-{{size}}" style="background-image:url(@@assetPath@@/imgs/{{id}}/{{image}})">
     <div class="dogInformation">
-        <h3>{{name}}</h3>
-        <p>{{subhead}}</p>
+        <h3>{{name}}, <span>{{shareline}}</span></h3>
     </div>
     </div>
 </div>

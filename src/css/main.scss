@@ -14,6 +14,10 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
 	display:none;
 }
 
+#article-header.article__header.interactiveMobile{
+    display:none;
+}
+
 .guInteractive {
     #interactiveByline{
         margin-top:20px;
@@ -29,8 +33,17 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
         .meta__social{
             margin-right:0;
         }
+        @media(min-width:980px){
+            .byline{
+                padding-right:200px;
+                margin-right:0;
+                box-sizing:border-box;
+                display:inline-block;
+                width:auto;
+            }
+        }
     }
-	font-family:'Guardian Egyptian Web';
+	font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
 	color:#333;
 	-webkit-font-smoothing:antialiased;
 	max-width:1300px;
@@ -83,9 +96,7 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
 	}
 
 	#content{
-		// border-top: 1px solid #dcdcdc;
-		margin:0;
-		padding-top:20px;
+		margin:20px 0 120px;
 	}
 
 	#allDogs{
@@ -120,6 +131,13 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
     		}
     		&:hover{
     			background-size:110%;
+                h3{
+                    color:#005689;
+                    text-decoration: underline;
+                }
+                .dogInformation{
+                    background:rgba(230,230,230,0.75);
+                }
     		}
     	}
     	.dogInformation{
@@ -129,25 +147,22 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
     		bottom:0;
     		background:rgba(242,242,242,0.75);
     		padding:20px 10px;
+            transition:background 0.2s;
 
     		h3{
-    			margin:0 0 0.2em;
+    			margin:0;
     			font-weight:100;
     			font-size:22px;
+                transition:color 0.2s;
     		}
-    		p{
-    			margin:0;
-    			font-family:'Guardian Text Sans Web';
-    			font-size:14px;
-    			line-height:1.2em;
-    		}
+
     	}
     	&.selected-true{
 			cursor: default;
-            border:1px solid #4BC6DF;
+            border:4px solid #4BC6DF;
 
             .dog{
-                opacity:0.8;
+                // opacity:0.5;
             }
 			.dog:hover{
 				background-size:100%;
@@ -166,18 +181,12 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
     		font-weight:100;
     		font-size:24px;
     	}
-    	#titleStroke{
-    		height:1px;
-    		width:60px;
-    		background-color:#dcdcdc;
-    		margin:5px 0 10px;
-    	}
-    	#dogDescription{
-    		font-family:'Guardian Text Sans Web';
-    		color:#333;
-    		font-size:14px;
-    		margin:0 0 20px;
-    	}
+        h4{
+            font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
+            color:#333;
+            font-size:14px;
+            margin:0 0 20px;
+        }
     	#shareContainer{
     		margin:20px auto 40px;
     		button{
@@ -220,7 +229,106 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
     	margin:0 auto;
     	p{
     		line-height:1.5em;
+            font-weight:normal;
+            font-family:"Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
     	}
+    }
+    #moreStories{
+        overflow:hidden;
+        #moreStoriesTitle{
+            font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
+            font-size:22px;
+            font-weight:bold;
+            margin-bottom:10px;
+            margin-top:40px;
+        }
+        li{
+            position: relative;
+            list-style:none;
+            font-size:0;
+            
+            a{
+                position: absolute;
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                transition:background 0.4s;
+                &:hover{
+                    background:rgba(0,0,0,0.1) !important;
+                }
+            }
+            .otherarticletitle{
+                font-weight:bold;
+                font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
+                font-size:18px;
+                padding:10px 10px 30px;
+                line-height: 1.2em;
+                background:#f4f4f4;
+            }
+            img{
+                width:100%;
+            }
+            @media(min-width:420px){
+                .otherarticleimage{
+                    margin-left:160px;
+                    
+                }
+                .otherarticletitle{
+                    width:160px;
+                    padding-right:20px;
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    height:100%;
+                }
+                a{
+                    margin-right:20px;
+                }
+            }
+            @media(min-width:480px){
+                width: 50%;
+                border-right:10px solid transparent;
+                float:left;
+                &:nth-of-type(2){
+                    border-left:10px solid transparent;
+                    border-right:0;
+                }
+                .otherarticleimage{
+                    margin-left:0;
+                    
+                }
+                .otherarticletitle{
+                    width:100%;
+                    padding-right:10px;
+                    position: relative;
+                    height:auto
+                }
+            }
+
+            @media(min-width:740px){
+                
+            }
+            @media(min-width:980px){
+                border-right:20px solid transparent;
+                &:nth-of-type(2){
+                    border-left:20px solid transparent;
+                    border-right:0;
+                }
+                .otherarticleimage{
+                    margin-left:160px;
+                    
+                }
+                .otherarticletitle{
+                    width:160px;
+                    padding-right:20px;
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    height:100%;
+                }
+            }
+        }
     }
     @media(min-width:480px){
     	.dogColumn{
@@ -281,15 +389,9 @@ $guss-webfonts-base-url: '//pasteup.guim.co.uk/fonts/';
     	h4{
     		font-size:22px;
     	}
-    	.actorInformation{
-    		padding:30px 40px;
-    	}
-
-    	.actorInformation{
-    		h5{
-    			font-size:36px;
-    		}
-    	}
+        .dogContainer .dogInformation{
+            padding:20px;
+        }
     	#detailContainer{
     		#titleStroke{
     			margin: 10px auto 25px;
